@@ -14,5 +14,5 @@ while true; do
 
     echo Volume: "$volume" Brightness: "$brightness"% Battery: "$battery_capacity"% "$battery_status" "$date"
 
-    sleep 60
+    sleep 59
 done
