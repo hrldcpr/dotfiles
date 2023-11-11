@@ -12,7 +12,7 @@ while true; do
 
     date=$(date +'%Y-%m-%d %I:%M %p')
 
-    echo sup Volume: "$volume" Brightness: "$brightness"% Battery: "$battery_capacity"% "$battery_status" "$date"
+    echo Volume: "$volume" Brightness: "$brightness"% Battery: "$battery_capacity"% "$battery_status" "$date"
 
     sleep 60
 done
