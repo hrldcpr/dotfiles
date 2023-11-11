@@ -70,6 +70,7 @@ exec swayidle -w \
         natural_scroll enabled
     }
 
+# TODO write a volume.bash script, to limit max volume to something reasonable (pavucontrol uses 99957 / 153% / 11.00 dB)
 bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +10%
 bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -10%
 bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
