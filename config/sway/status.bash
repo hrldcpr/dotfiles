@@ -14,5 +14,6 @@ while true; do
 
     echo Volume: "$volume" Brightness: "$brightness"% Battery: "$battery_capacity"% "$battery_status" "$date"
 
+    # TODO update time at the _beginning_ of each minute
     sleep 59
 done
