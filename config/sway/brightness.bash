@@ -1,6 +1,6 @@
 
+min_brightness=1
 max_brightness=$(cat /sys/class/backlight/intel_backlight/max_brightness)
-min_brightness=$((max_brightness / 100 + 1)) # 1%
 step=$((max_brightness / 5)) # 20%
 
 brightness=$(cat /sys/class/backlight/intel_backlight/brightness)
