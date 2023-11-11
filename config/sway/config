@@ -70,10 +70,10 @@ exec swayidle -w \
         natural_scroll enabled
     }
 
+bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
+bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -10%
 # TODO write a volume.bash script, to limit max volume to something reasonable (pavucontrol uses 99957 / 153% / 11.00 dB)
 bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +10%
-bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -10%
-bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
 bindsym XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
 bindsym XF86MonBrightnessUp exec bash ~/.config/sway/brightness.bash up
 bindsym XF86MonBrightnessDown exec bash ~/.config/sway/brightness.bash down
