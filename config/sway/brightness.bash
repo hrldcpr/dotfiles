@@ -1,12 +1,11 @@
 
 max_brightness=$(cat /sys/class/backlight/intel_backlight/max_brightness)
+min_brightness=$((max_brightness / 100 + 1)) # 1%
 step=$((max_brightness / 5)) # 20%
 
 brightness=$(cat /sys/class/backlight/intel_backlight/brightness)
 
 if [ "$1" = "down" ]; then
-    min_brightness=$((max_brightness / 100 + 1)) # 1%
-
     brightness=$((brightness - step))
     if ((brightness < min_brightness)); then brightness=$min_brightness; fi
     echo "$brightness" > /sys/class/backlight/intel_backlight/brightness

@@ -74,8 +74,8 @@ bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +10%
 bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -10%
 bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
 bindsym XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
-bindsym XF86MonBrightnessUp exec bash ~/.config/sway/brightness.sh up
-bindsym XF86MonBrightnessDown exec bash ~/.config/sway/brightness.sh down
+bindsym XF86MonBrightnessUp exec bash ~/.config/sway/brightness.bash up
+bindsym XF86MonBrightnessDown exec bash ~/.config/sway/brightness.bash down
 
 ### Key bindings
 #
@@ -224,7 +224,7 @@ bar {
 
     # When the status_command prints a new line to stdout, swaybar updates.
     # The default just shows the current date and time.
-    status_command while bash ~/.config/sway/status.sh; do sleep 1; done
+    status_command while bash ~/.config/sway/status.bash; do sleep 1; done
 
     colors {
         statusline #ffffff
