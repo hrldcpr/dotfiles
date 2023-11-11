@@ -1,3 +1,5 @@
+# to write brightness without sudo, user must be in the 'video' group
+# and backlight.rules must be installed in /etc/udev/rules.d/
 
 min_brightness=1
 max_brightness=$(cat /sys/class/backlight/intel_backlight/max_brightness)
