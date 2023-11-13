@@ -20,6 +20,8 @@ set $term foot
 # on the original workspace that the command was run on.
 set $menu dmenu_path | dmenu | xargs swaymsg exec --
 
+set $status_path ~/Documents/sway_bar_status
+
 include /etc/sway/config-vars.d/*
 
 # remove title bar
@@ -71,12 +73,13 @@ exec swayidle -w \
     }
 
 bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
-bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -10%
-# TODO write a volume.bash script, to limit max volume to something reasonable (pavucontrol uses 99957 / 153% / 11.00 dB)
-bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +10%
 bindsym XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
-bindsym XF86MonBrightnessDown exec bash ~/.config/sway/brightness.bash down
-bindsym XF86MonBrightnessUp exec bash ~/.config/sway/brightness.bash up
+
+bindsym XF86AudioLowerVolume exec bash $status_path/volume.bash down
+bindsym XF86AudioRaiseVolume exec bash $status_path/volume.bash up
+
+bindsym XF86MonBrightnessDown exec bash $status_path/brightness.bash down
+bindsym XF86MonBrightnessUp exec bash $status_path/brightness.bash up
 
 ### Key bindings
 #
@@ -226,7 +229,7 @@ bar {
     # When the status_command prints a new line to stdout, swaybar updates.
     # The default just shows the current date and time.
     # status_command while date +'%Y-%m-%d %I:%M:%S %p'; do sleep 1; done
-    status_command bash ~/.config/sway/status.bash
+    status_command ~/.asdf/shims/python $status_path/status.py
 
     colors {
         statusline #ffffff
