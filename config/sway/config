@@ -72,6 +72,12 @@ exec swayidle -w \
         natural_scroll enabled
     }
 
+### Key bindings
+
+#
+# Hardware:
+#
+
 bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
 bindsym XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
 
@@ -81,7 +87,6 @@ bindsym XF86AudioRaiseVolume exec bash $status_path/volume.bash up
 bindsym XF86MonBrightnessDown exec bash $status_path/brightness.bash down
 bindsym XF86MonBrightnessUp exec bash $status_path/brightness.bash up
 
-### Key bindings
 #
 # Basics:
 #
