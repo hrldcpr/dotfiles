@@ -20,7 +20,7 @@ set $term foot
 # on the original workspace that the command was run on.
 set $menu dmenu_path | dmenu | xargs swaymsg exec --
 
-set $status_path ~/Documents/sway_bar_status
+set $status_path ~/Documents/sway-bar-status
 
 include /etc/sway/config-vars.d/*
 
