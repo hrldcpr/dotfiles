@@ -1,5 +1,6 @@
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
 
+(setq make-backup-files nil)
 (setq-default indent-tabs-mode nil)
 (menu-bar-mode -1)
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
