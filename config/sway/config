@@ -75,6 +75,9 @@ exec swayidle -w \
         click_method clickfinger  # disables simulated middle button when clicking bottom-middle of touchpad
     }
 
+# use print screen button as compose key, for inputting special characters
+    input * xkb_options compose:prsc
+
 ### Key bindings
 
 #
