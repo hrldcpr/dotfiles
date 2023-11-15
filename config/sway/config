@@ -76,6 +76,7 @@ exec swayidle -w \
     }
 
 # use print screen button as compose key, for inputting special characters
+# see /usr/share/X11/locale/en_US.UTF-8/Compose and ~/.XCompose and `man compose`
     input * xkb_options compose:prsc
 
 ### Key bindings
