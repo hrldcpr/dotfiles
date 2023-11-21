@@ -5,6 +5,11 @@
 ;; this fixes C-- shortcut, among other things
 (add-to-list 'term-file-aliases '("foot" . "xterm"))
 
+;; prefer simple linear undo/redo
+;; TODO use undo-tree package instead?
+(global-set-key (kbd "C--") 'undo-only)
+(global-set-key (kbd "C-_") 'undo-redo)
+
 (setq make-backup-files nil)
 (setq-default indent-tabs-mode nil)
 (menu-bar-mode -1)
