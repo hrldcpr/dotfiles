@@ -1,6 +1,10 @@
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
 
+;; emacs (as of v28.2) doesn't seem to know about foot
+;; this fixes C-- shortcut, among other things
+(add-to-list 'term-file-aliases '("foot" . "xterm"))
+
 (setq make-backup-files nil)
 (setq-default indent-tabs-mode nil)
 (menu-bar-mode -1)
