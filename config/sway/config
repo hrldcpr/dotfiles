@@ -82,6 +82,12 @@ exec swayidle -w \
 ### Key bindings
 
 #
+# Clipboard history:
+#
+exec wl-paste --watch cliphist store
+bindsym $mod+y exec cliphist list | dmenu | cliphist decode | wl-copy
+
+#
 # Hardware:
 #
 
