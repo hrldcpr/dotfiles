@@ -1,3 +1,6 @@
+;; On first install, run package-install-selected-packages
+;; to install packages from package-selected-packages below.
+
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
 
