@@ -24,6 +24,9 @@
 
 ;; (add-hook 'elixir-mode-hook (lambda () (add-hook 'before-save-hook 'elixir-format nil 'local)))
 
+(add-hook 'css-mode-hook 'prettier-js-mode)
+(add-hook 'html-mode-hook 'prettier-js-mode)
+(add-hook 'js-mode-hook 'prettier-js-mode)
 (add-hook 'markdown-mode-hook 'prettier-js-mode)
 
 (add-hook 'python-mode-hook 'blacken-mode)
