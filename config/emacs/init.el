@@ -31,6 +31,7 @@
 
 (add-hook 'python-mode-hook 'blacken-mode)
 
+;; TODO move package-selected-packages out of custom-set-variables, because I've started setting it by hand...
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
