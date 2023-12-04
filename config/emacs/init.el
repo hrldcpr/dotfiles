@@ -21,8 +21,8 @@
 (add-hook 'c-mode-hook (lambda () (add-hook 'before-save-hook 'clang-format-buffer nil 'local)))
 (add-hook 'c++-mode-hook (lambda () (add-hook 'before-save-hook 'clang-format-buffer nil 'local)))
 (add-hook 'glsl-mode-hook (lambda () (add-hook 'before-save-hook 'clang-format-buffer nil 'local)))
-
 ;; (add-hook 'elixir-mode-hook (lambda () (add-hook 'before-save-hook 'elixir-format nil 'local)))
+(add-hook 'go-mode-hook (lambda () (add-hook 'before-save-hook 'gofmt-before-save nil 'local)))
 
 (add-hook 'css-mode-hook 'prettier-js-mode)
 (add-hook 'html-mode-hook 'prettier-js-mode)
@@ -43,6 +43,7 @@
      clang-format
      dockerfile-mode
      elixir-mode
+     go-mode
      markdown-mode
      prettier-js
      )))
