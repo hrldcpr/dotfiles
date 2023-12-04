@@ -89,6 +89,11 @@ exec wl-paste --watch cliphist store
 bindsym $mod+y exec cliphist list | dmenu | cliphist decode | wl-copy
 
 #
+# Screenshots
+#
+bindsym $mod+p exec grimshot save screen
+
+#
 # Hardware:
 #
 
