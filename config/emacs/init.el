@@ -31,6 +31,19 @@
 
 (add-hook 'python-mode-hook 'blacken-mode)
 
+;; From https://www.emacswiki.org/emacs/CopyAndPaste#h5o-4
+;; credit: yorickvP on Github
+;; TODO don't ask to kill wl-copy on quit...
+(setq wl-copy-process nil)
+(defun wl-copy (text)
+  (setq wl-copy-process (make-process :name "wl-copy"
+                                      :buffer nil
+                                      :command '("wl-copy" "-f" "-n")
+                                      :connection-type 'pipe))
+  (process-send-string wl-copy-process text)
+  (process-send-eof wl-copy-process))
+(setq interprogram-cut-function 'wl-copy)
+
 ;; TODO move package-selected-packages out of custom-set-variables, because I've started setting it by hand...
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
