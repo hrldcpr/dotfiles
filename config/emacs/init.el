@@ -31,9 +31,10 @@
 
 (add-hook 'python-mode-hook 'blacken-mode)
 
-;; From https://www.emacswiki.org/emacs/CopyAndPaste#h5o-4
-;; credit: yorickvP on Github
-;; TODO don't ask to kill wl-copy on quit...
+;; Copy to Wayland clipboard, in addition to usual kill ring:
+;; (From https://www.emacswiki.org/emacs/CopyAndPaste#h5o-4 / https://gist.github.com/yorickvP/6132f237fbc289a45c808d8d75e0e1fb)
+;; (This is useful because Emacs wraps long lines in various ways, so terminal emulators' builtin copying gets nasty.)
+;; TODO silently kill wl-copy on quit, instead of asking every time
 (setq wl-copy-process nil)
 (defun wl-copy (text)
   (setq wl-copy-process (make-process :name "wl-copy"
