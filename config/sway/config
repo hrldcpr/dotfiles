@@ -202,7 +202,8 @@ bindsym XF86MonBrightnessUp exec bash $status_path/brightness.bash up
     bindsym $mod+Shift+space floating toggle
 
     # Swap focus between the tiling area and the floating area
-    bindsym $mod+space focus mode_toggle
+    # bindsym $mod+space focus mode_toggle
+    # (disabled because I don't use it, and Super+space is ibus input method swap)
 
     # Move focus to the parent container
     bindsym $mod+a focus parent
