@@ -36,7 +36,6 @@
 ;; (This is useful because Emacs wraps long lines in various ways, so terminal emulators' builtin copying gets nasty.)
 (defun wl-copy (text)
   (let ((p (make-process :name "wl-copy"
-                         :buffer nil
                          :command '("wl-copy")
                          :connection-type 'pipe)))
     (process-send-string p text)
