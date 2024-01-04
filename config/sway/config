@@ -6,6 +6,10 @@
 
 xwayland enable
 
+# IBus for emoji and pinyin input:
+exec ibus-daemon --daemonize --replace
+# TODO try fcitx5 instead, it may have better wayland support
+
 ### Variables
 #
 # Logo key. Use Mod1 for Alt.
