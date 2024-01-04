@@ -32,17 +32,15 @@
 (add-hook 'python-mode-hook 'blacken-mode)
 
 ;; Copy to Wayland clipboard, in addition to usual kill ring:
-;; (From https://www.emacswiki.org/emacs/CopyAndPaste#h5o-4 / https://gist.github.com/yorickvP/6132f237fbc289a45c808d8d75e0e1fb)
+;; (Adapted from https://www.emacswiki.org/emacs/CopyAndPaste#h5o-4 / https://gist.github.com/yorickvP/6132f237fbc289a45c808d8d75e0e1fb)
 ;; (This is useful because Emacs wraps long lines in various ways, so terminal emulators' builtin copying gets nasty.)
-;; TODO silently kill wl-copy on quit, instead of asking every time
-(setq wl-copy-process nil)
 (defun wl-copy (text)
-  (setq wl-copy-process (make-process :name "wl-copy"
-                                      :buffer nil
-                                      :command '("wl-copy" "-f" "-n")
-                                      :connection-type 'pipe))
-  (process-send-string wl-copy-process text)
-  (process-send-eof wl-copy-process))
+  (let ((p (make-process :name "wl-copy"
+                         :buffer nil
+                         :command '("wl-copy")
+                         :connection-type 'pipe)))
+    (process-send-string p text)
+    (process-send-eof p)))
 (setq interprogram-cut-function 'wl-copy)
 
 ;; TODO move package-selected-packages out of custom-set-variables, because I've started setting it by hand...
