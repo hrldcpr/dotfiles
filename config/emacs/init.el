@@ -17,6 +17,7 @@
 (setq-default indent-tabs-mode nil)
 (menu-bar-mode -1)
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
+(setq column-number-mode t)
 
 (add-hook 'c-mode-hook (lambda () (add-hook 'before-save-hook 'clang-format-buffer nil 'local)))
 (add-hook 'c++-mode-hook (lambda () (add-hook 'before-save-hook 'clang-format-buffer nil 'local)))
