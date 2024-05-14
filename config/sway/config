@@ -4,6 +4,7 @@
 #
 # Read `man 5 sway` for a complete reference.
 
+# xwayland seems to be enabled by default sometimes, but not always, so...
 xwayland enable
 
 # IBus for emoji and pinyin input:
