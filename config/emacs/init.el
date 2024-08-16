@@ -27,11 +27,14 @@
 (add-hook 'go-mode-hook (lambda () (add-hook 'before-save-hook 'gofmt-before-save nil 'local)))
 
 (add-hook 'css-mode-hook 'prettier-js-mode)
-(add-hook 'html-mode-hook 'prettier-js-mode)
 (add-hook 'js-mode-hook 'prettier-js-mode)
 (add-hook 'markdown-mode-hook 'prettier-js-mode)
-
 (add-hook 'python-mode-hook 'blacken-mode)
+
+;; for .html.heex use elixir-format, otherwise use prettier:
+(add-hook 'html-mode-hook (lambda () (if (string-suffix-p ".heex" buffer-file-name 'ignore-case)
+                                         (add-hook 'before-save-hook 'elixir-format nil 'local)
+                                       (prettier-js-mode))))
 
 ;; Copy to Wayland clipboard, in addition to usual kill ring:
 ;; (Adapted from https://www.emacswiki.org/emacs/CopyAndPaste#h5o-4 / https://gist.github.com/yorickvP/6132f237fbc289a45c808d8d75e0e1fb)
