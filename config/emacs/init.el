@@ -20,6 +20,10 @@
 (setq require-final-newline t)
 (setq column-number-mode t)
 
+;; these commands seem useful, not sure why they're disabled by default:
+(put 'upcase-region 'disabled nil)
+(put 'downcase-region 'disabled nil)
+
 (add-hook 'c-mode-hook (lambda () (add-hook 'before-save-hook 'clang-format-buffer nil 'local)))
 (add-hook 'c++-mode-hook (lambda () (add-hook 'before-save-hook 'clang-format-buffer nil 'local)))
 (add-hook 'glsl-mode-hook (lambda () (add-hook 'before-save-hook 'clang-format-buffer nil 'local)))
