@@ -7,9 +7,8 @@
 # xwayland seems to be enabled by default sometimes, but not always, so...
 xwayland enable
 
-# IBus for emoji and pinyin input:
-exec ibus-daemon --daemonize --replace
-# TODO try fcitx5 instead, it may have better wayland support
+# emoji and pinyin input:
+exec fcitx5
 
 ### Variables
 #
