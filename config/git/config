@@ -28,3 +28,5 @@
 	whitespace = red reverse
 [commit]
 	gpgsign = true
+[rebase]
+	autostash = true
