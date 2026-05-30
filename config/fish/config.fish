@@ -18,3 +18,7 @@ if not contains $_asdf_shims $PATH
     set -gx --prepend PATH $_asdf_shims
 end
 set --erase _asdf_shims
+
+
+# make Control-L clear entire scrollback, instead of just the screen
+bind \cl 'clear; commandline -f repaint'
