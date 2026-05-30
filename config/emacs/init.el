@@ -32,6 +32,7 @@
 
 (add-hook 'css-mode-hook 'prettier-js-mode)
 (add-hook 'js-mode-hook 'prettier-js-mode)
+(add-hook 'json-mode-hook 'prettier-js-mode)
 (add-hook 'markdown-mode-hook 'prettier-js-mode)
 (add-hook 'python-mode-hook 'blacken-mode)
 
@@ -65,6 +66,7 @@
      dockerfile-mode
      elixir-mode
      go-mode
+     json-mode
      markdown-mode
      prettier-js
      )))
