@@ -1,5 +1,5 @@
 # load /usr/share/X11/locale/en_US.UTF-8/Compose:
-include "$L"
+include "%L"
 
 # copied <dead_greek> stuff from there, but changed to <Multi_key> <g> prefix:
 <Multi_key> <g> <A>			: "Α"	U0391 # GREEK CAPITAL LETTER ALPHA
